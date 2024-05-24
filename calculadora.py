@@ -1,11 +1,27 @@
-# Vamos a crear mi primera calculadora!!!!
-mesa = input("¿Hola, que mesa reservó?: ",)
-mesa = int(mesa)
+signo = input('¿Que operacion deseas realizar?: ')
+signo = signo.lower()
+operaciones = ('suma', '+', 'resta', '-', 'multiplicacion', 'multiplicación', '*', 'division', 'división', '/')
+if signo not in operaciones:
+    print(f'La operacion {signo} no se encontro, ya que la calculadora esta hecha solo para operaciones basicas😥')
+else:
+    print('operacion existente 😁')
 
-consumo = input("¿cuanto fue su consumo total?: ")
-propina = input(
-    "¿teniendo en cuenta que la propina es voluntaria y la atencion recibida, cuanto desea dar de propina en modo de porcentaje? ")
+valor1 = int(input('digite el primer valor => '))
+valor2 = int(input('digite el segundo valor => '))
 
-consumo_total = float(consumo) * float(propina) / 100
-resultado_operacion = print(
-    f"considerando que el monto total fue de: {consumo}, su propina equivale a {consumo_total}")
+if signo == 'suma' or signo == '+':
+    suma = valor1 + valor2
+    print(f'la suma de {valor1} y {valor2} da como resultado: {suma} ✔️')
+
+elif signo == 'resta' or signo == '-':
+    resta = valor1 - valor2
+    print(f'la resta de {valor1} y {valor2} da como resultado: {resta}')
+
+elif signo == 'multiplicacion' or signo == 'multiplicación' or signo == '*':
+    multiplicar = valor1 * valor2 
+    print(f'la multiplicación de {valor1} y {valor2} da como resultado: {multiplicar} ✔️')
+
+elif signo == 'division' or signo == 'división' or signo == '/':
+    dividir = valor1 / valor2 
+    print(f'la división entre {valor1} y {valor2} da como resultado: {dividir} ✔️')
+
