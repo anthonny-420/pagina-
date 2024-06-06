@@ -43,7 +43,7 @@ switch ($min_answer_option) {
 
 
     case 'ubicacion':
-        echo '¿Hacia que dirección deseas viajar: Norte, Sur, Este o Oeste?';
+        echo '¿Hacia que dirección deseas viajar: Norte, Sur, Este o Oeste? ';
         $direction = readline();
         $direction_answer = strtolower($direction);
         if ($direction_answer == 'norte') {
@@ -58,8 +58,10 @@ switch ($min_answer_option) {
             echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para los "Ubicación", puedes probar con las  opciones ("Climas" o "Turismo"), ya que posiblimente se encuentra allí';
         }
         break;
-    case '$turismo':
-        echo '¿Teniendo en cuenta las siguientes condiciones, a cual tu preferirias ir con fines turisticos: mar, llano, desierto, valle';
+
+
+    case 'turismo':
+        echo '¿Teniendo en cuenta las siguientes condiciones, a cual tu preferirias ir con fines turisticos: mar, llano, desierto, valle? ';
         $tourism = readline();
         $tourism_answer = strtolower($tourism);
         if ($tourism_answer == 'mar') {
@@ -73,6 +75,8 @@ switch ($min_answer_option) {
         } else {
             echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para el "Turismo", puedes probar con las  opciones ("Climas" o "Ubiciación"), ya que posiblimente se encuentra alli';
         }
+        break;
+
     default: {
             echo 'el valor anexado no se encontro, digita nuevamente un valor que este dentro de nuestros limites, ¡Gracias🤓!';
         }
