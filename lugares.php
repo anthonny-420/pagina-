@@ -22,8 +22,16 @@ $turismo = array(
 
 echo '¿por medio de que opción desea buscar el lugar a visitar: clima, ubicación, turismo? ';
 
-$answer_option = readline();
-$min_answer_option = strtolower($answer_option);
+$min_answer_option = readline();
+$min_answer_option = strtolower($min_answer_option);
+
+while ($min_answer_option != 'clima' && $min_answer_option != 'ubicacion' && $min_answer_option != 'ubicación' && $min_answer_option != 'turismo') {
+    echo 'el valor anexado no se encontro, digita nuevamente un valor que este dentro de nuestros limites, ¡Gracias🤓!' . PHP_EOL;
+    $min_answer_option = readline();
+    $min_answer_option = strtolower($min_answer_option);
+}
+
+echo 'respuesta correcta, ¡prosigamos! 🐵' . PHP_EOL;
 
 switch ($min_answer_option) {
     case 'clima':
@@ -37,7 +45,7 @@ switch ($min_answer_option) {
         } elseif ($answer_weather == 'templado') {
             echo 'Encontramos que para el clima ' . $answer_weather . ' un sitio que te podria gustar es: Medellin ';
         } else {
-            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para los "Climas", puedes probar con las  opciones ("Ubicación" o "Turismo"), ya que posiblimente se encuentra allí';
+            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para los ' . $min_answer_option . ', puedes probar con las  opciones ("Ubicación" o "Turismo"), ya que posiblimente se encuentra allí';
         }
         break;
 
@@ -55,7 +63,7 @@ switch ($min_answer_option) {
         } elseif ($direction_answer == 'oeste') {
             echo 'Un lugar que te podemos recomendar que se encuentra hacia el ' . $direction_answer . ' del pais seria Antioquia';
         } else {
-            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para los "Ubicación", puedes probar con las  opciones ("Climas" o "Turismo"), ya que posiblimente se encuentra allí';
+            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para los ' . $min_answer_option . ', puedes probar con las  opciones ("Climas" o "Turismo"), ya que posiblimente se encuentra allí';
         }
         break;
 
@@ -73,12 +81,7 @@ switch ($min_answer_option) {
         } elseif ($tourism_answer == 'valle') {
             echo 'Un lugar turistico ubicado en el ' . $tourism_answer . ' es la ciudad de Quindio';
         } else {
-            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para el "Turismo", puedes probar con las  opciones ("Climas" o "Ubiciación"), ya que posiblimente se encuentra alli';
-        }
-        break;
-
-    default: {
-            echo 'el valor anexado no se encontro, digita nuevamente un valor que este dentro de nuestros limites, ¡Gracias🤓!';
+            echo 'Aquel valor que digitas no se encuentra dentro del campo asignado para el ' . $min_answer_option . ', puedes probar con las  opciones ("Climas" o "Ubiciación"), ya que posiblimente se encuentra alli';
         }
         break;
 }
